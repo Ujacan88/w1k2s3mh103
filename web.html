@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorty.web – Brutálne jednoduché weby pre lídrov</title>
+    <meta name="description" content="Od osobných portfólií po komplexné firemné weby. Sorty.web tvorí rýchle, moderné a brutálne jednoduché weby, ktoré predávajú.">
+    <link rel="stylesheet" href="web.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="header-wrapper">
+    <header class="site-header">
+        <div class="nav">
+            <div class="brand-group">
+                <a href="index.html" class="hub-back-btn" title="Späť na Sorty Hub">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path></svg>
+                </a>
+
+                <a href="#top" class="brand">
+                    <img src="SORTY.jpg" class="brand-logo" alt="Sorty.web Logo" onerror="this.style.display='none'">
+                    <span class="logo-text">Sorty.<span>web</span></span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Otvoriť menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="close-icon" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+
+            <nav class="nav-links">
+                <a href="#work">Práce</a>
+                <a href="#services">Služby</a>
+                <a href="#about">O mne</a>
+                <a href="#contact" class="nav-cta">Získať návrh</a>
+            </nav>
+        </div>
+    </header>
+</div>
+
+<main id="top">
+    <section class="section hero" id="idea">
+        <div class="hero-glow"></div>
+        <div class="container hero-grid">
+            <div class="hero-text reveal">
+                <p class="eyebrow">High-end Webdizajn Štúdio</p>
+                <h1>Dizajn, ktorý vyzerá draho.<br>Web, ktorý je brutálne jednoduchý.</h1>
+                <p class="hero-subtitle">
+                    Od začínajúcich freelancerov až po etablované korporácie. Staviame čisté, extrémne rýchle weby, ktoré predávajú bez vizuálneho šumu a byrokracie.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn primary glow-effect">
+                        Začať projekt
+                        <span class="btn-icon">↗</span>
+                    </a>
+                    <a href="#work" class="btn ghost">
+                        Ukážky prác
+                    </a>
+                </div>
+                <div class="hero-meta">
+                    <div class="meta-item"><span class="dot-green"></span> Optimalizované pre maximálnu konverziu</div>
+                </div>
+            </div>
+            <aside class="hero-panel reveal delay-2">
+                <div class="hero-panel-header">
+                    <span class="dot"></span>
+                    <span class="hero-panel-label">Anatómia čistého dizajnu</span>
+                </div>
+                <div class="hero-panel-body">
+                    <p class="hero-panel-title">Nič navyše. Len to podstatné.</p>
+                    <p class="hero-panel-text" style="font-size: 0.95rem; margin-bottom: 24px;">
+                        Odstraňujeme vizuálny šum a staviame architektúru, ktorá návštevníka podvedome vedie k predaju. Takto to vyzerá v praxi:
+                    </p>
+
+                    <div class="mini-browser">
+                        <div class="browser-dots"></div>
+
+                        <div class="mini-step">
+                            <span class="mini-tag">1. Hodnota</span>
+                            <div class="mini-heading">Váš produkt rieši problém.</div>
+                        </div>
+
+                        <div class="mini-step">
+                            <span class="mini-tag">2. Dôvera</span>
+                            <div class="mini-text">Pretože máte tieto konkrétne výsledky a dáta, ktoré to potvrdzujú.</div>
+                        </div>
+
+                        <div class="mini-step">
+                            <span class="mini-tag">3. Akcia</span>
+                            <div class="mini-btn">Chcem to kúpiť ↗</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section class="section" id="work">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="eyebrow">Vybrané projekty</p>
+                <h2>Nehovoríme. Ukazujeme.</h2>
+                <p class="section-subtitle">
+                    Kombinujeme estetiku s tvrdými dátami. Tu sú weby, ktoré našim klientom reálne pomáhajú.
+                </p>
+            </div>
+
+            <div class="work-grid">
+                <a href="https://farnostudol.sk" target="_blank" rel="noopener noreferrer" class="work-card reveal delay-1">
+                    <div class="work-img-wrapper">
+                        <img src="farnost.png" alt="Náhľad webu Farnosť Údol" class="work-img">
+                    </div>
+                    <div class="work-info">
+                        <p class="work-category">Prezentácia farnosti</p>
+                        <h3>Farnosť Údol</h3>
+                    </div>
+                </a>
+
+                <a href="https://kepla.sk" target="_blank" rel="noopener noreferrer" class="work-card reveal delay-2">
+                    <div class="work-img-wrapper">
+                        <img src="kepla.png" alt="Náhľad webu KEPLA" class="work-img">
+                    </div>
+                    <div class="work-info">
+                        <p class="work-category">Nezisková organizácia</p>
+                        <h3>KEPLA</h3>
+                    </div>
+                </a>
+
+                <a href="https://falcons.sk" target="_blank" rel="noopener noreferrer" class="work-card reveal delay-3">
+                    <div class="work-img-wrapper">
+                        <img src="falcons.png" alt="Náhľad webu Falcons Stará Ľubovňa" class="work-img">
+                    </div>
+                    <div class="work-info">
+                        <p class="work-category">Športový klub</p>
+                        <h3>Falcons Stará Ľubovňa</h3>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="eyebrow">Riešenia na mieru</p>
+                <h2>Od jednotlivcov po lídrov na trhu.</h2>
+            </div>
+
+            <div class="grid-3">
+                <article class="card reveal delay-1">
+                    <p class="card-tag">01 / Štart</p>
+                    <h3>Prezentácia & Freelance</h3>
+                    <p>Silný One-pager alebo mini web. Ideálny pre osobnú značku. Všetko podstatné na jednom mieste.</p>
+                </article>
+
+                <article class="card popular reveal delay-2">
+                    <div class="badge">Najčastejšie</div>
+                    <p class="card-tag">02 / Biznis</p>
+                    <h3>Firemný Web</h3>
+                    <p>Pre menšie a stredné firmy. Zrozumiteľná navigácia, služby, budovanie dôvery a získavanie leadov.</p>
+                </article>
+
+                <article class="card reveal delay-3">
+                    <p class="card-tag">03 / Premium</p>
+                    <h3>Korporát & Komplex</h3>
+                    <p>Komplexný redizajn, napojenie na systémy a zachovanie identity, no s dôrazom na jednoduchosť.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="container about-grid">
+            <div class="about-text reveal">
+                <p class="eyebrow">Kto stojí za Sorty.web</p>
+                <h2>Dobrý dizajn je neviditeľný.</h2>
+                <div class="about-content">
+                    <p>
+                        Som <strong>Matej</strong>, dizajnér a vývojár stojaci za Sorty.web. Neznášam zložité a prekombinované stránky, na ktorých sa návštevník okamžite stratí. Mojou filozofiou je absolútna jednoduchosť spojená s čistým, moderným dizajnom. Tvorím weby tak, aby neboli preplnené zbytočnosťami, vyzerali skvele a zákazníka viedli k cieľu úplne priamočiaro.
+                    </p>
+                    <p>
+                        Preto pre vás vytvorím web, ktorý zbytočné prekážky odstráni. Výsledok? Stránka, ktorá nielen špičkovo vyzerá, ale okamžite buduje dôveru a mení návštevníkov na platiacich klientov. Vy sa sústreďte na svoj biznis, ja sa postarám o web, ktorý vám ušetrí čas a prinesie reálne výsledky.
+                    </p>
+                </div>
+            </div>
+            <div class="about-stats reveal delay-2">
+                <div class="stat-box">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Focus na jednoduchosť</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Zbytočného vizuálneho balastu</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="contact">
+        <div class="container contact-grid">
+            <div class="reveal">
+                <div class="section-header small-header">
+                    <p class="eyebrow">Poďme na to</p>
+                    <h2>Získajte web, ktorý je reálne jednoduchý.</h2>
+                </div>
+                <p class="mb-8">
+                    Žiadne zložité zadania ani byrokracia. Napíšte mi v krátkosti, čo potrebujete, a <strong>do 24 hodín</strong> sa ozvem s konkrétnym návrhom postupu a odhadom.
+                </p>
+
+                <div class="direct-contact">
+                    <div class="contact-methods">
+                        <div class="contact-item">
+                            <span class="contact-label">Napíšte napriamo:</span>
+                            <a href="mailto:hello@sortyweb.sk" class="contact-link">hello@sortyweb.sk</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Zavolajte mi:</span>
+                            <a href="tel:+421900000000" class="contact-link">+421 900 000 000</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-socials">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <span class="footer-sep">/</span>
+                        <a href="#" class="social-link">Instagram</a>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form reveal delay-2">
+                <div class="form-header">
+                    <h3>Nezáväzný dopyt</h3>
+                    <p>Úvodná konzultácia je vždy zadarmo.</p>
+                </div>
+
+                <label>
+                    Meno a Priezvisko / Spoločnosť
+                    <input type="text" name="name" placeholder="Napr. Peter Novák, TechCorp s.r.o." required>
+                </label>
+                <label>
+                    E‑mail
+                    <input type="email" name="email" placeholder="vas@email.sk" required>
+                </label>
+                <label>
+                    O čom je váš projekt? (Stručne)
+                    <textarea name="message" rows="4" placeholder="Potrebujeme nový web pre naše služby. Naša predstava je..."></textarea>
+                </label>
+                <button type="submit" class="btn primary full-width glow-effect">
+                    Odoslať dopyt
+                    <span class="btn-icon">→</span>
+                </button>
+                <p class="form-disclaimer">Odoslaním súhlasíte so spracovaním údajov pre účely spätnej komunikácie.</p>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <span>© <span id="year"></span> Sorty.web</span>
+        <span class="footer-sep">/</span>
+        <span>Brutálne jednoduché weby pre moderné značky.</span>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 1. Nastavenie aktuálneho roku v pätičke (bezpečné overenie)
+        const yearEl = document.getElementById('year');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
+
+        // 2. Animácie pri scrollovaní (Reveal)
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // 3. Bezpečné mobilné menu (Pilulka)
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const siteHeader = document.querySelector('.site-header');
+        const menuIcon = document.querySelector('.menu-icon');
+        const closeIcon = document.querySelector('.close-icon');
+
+        if (menuToggle && siteHeader) {
+            menuToggle.addEventListener('click', function(e) {
+                e.preventDefault(); // Zabráni prebliknutiu stránky
+
+                // Pridá alebo odoberie aktívnu triedu hlavičke
+                siteHeader.classList.toggle('menu-active');
+
+                const isActive = siteHeader.classList.contains('menu-active');
+
+                // Prepínanie ikonky (Hamburger / Krížik)
+                if (menuIcon && closeIcon) {
+                    menuIcon.style.display = isActive ? 'none' : 'block';
+                    closeIcon.style.display = isActive ? 'block' : 'none';
+                }
+            });
+
+            // Automatické zavretie menu po kliku na akýkoľvek odkaz alebo košík
+            const navLinksItems = document.querySelectorAll('.nav-links a, .nav-links button');
+            navLinksItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    siteHeader.classList.remove('menu-active');
+                    if (menuIcon && closeIcon) {
+                        menuIcon.style.display = 'block';
+                        closeIcon.style.display = 'none';
+                    }
+                });
+            });
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+/* ZÁKLAD TÉMY – SORTY HUB (Master Brand) */
+
+:root {
+    --bg: #030303;
+    --bg-alt: #080808;
+    --surface: rgba(15, 15, 15, 0.8);
+
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.2);
+
+    --text: #ffffff;
+    --text-muted: #888888;
+
+    /* Prémiová modrá pre Web */
+    --color-web: #3b82f6;
+    --color-shop: #f97316;
+    --color-is: #a855f7;
+
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-pill: 99px;
+
+    --transition-fast: 0.2s ease-out;
+    --transition-med: 0.4s ease-out;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; background-color: var(--bg); }
+body {
+    margin: 0; font-family: "DM Sans", system-ui, sans-serif;
+    color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased;
+    background: var(--bg); min-height: 100vh;
+}
+
+/* SCROLL REVEAL */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+
+/* LAYOUT & TYPO */
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 120px 0; position: relative; }
+.section-alt { background: var(--bg-alt); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+h1, h2, h3 { margin: 0 0 16px; line-height: 1.1; letter-spacing: -0.04em; font-family: "Space Grotesk", sans-serif; }
+h1 { font-size: clamp(3rem, 7vw, 5rem); font-weight: 700; background: linear-gradient(180deg, #FFFFFF 0%, #777 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; }
+h3 { font-size: 1.5rem; font-weight: 600; color: var(--text); }
+p { margin: 0 0 16px; color: var(--text-muted); font-size: 1.1rem; }
+
+.eyebrow { display: inline-block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-muted); margin-bottom: 24px; padding: 6px 16px; border: 1px solid var(--border-subtle); border-radius: var(--radius-pill); background: rgba(255, 255, 255, 0.03); }
+
+/* HLAVIČKA HUB-U */
+.header-wrapper { position: fixed; top: 24px; left: 0; right: 0; z-index: 50; display: flex; justify-content: center; padding: 0 24px; pointer-events: none; }
+.site-header {
+    pointer-events: auto; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-subtle); border-radius: var(--radius-pill); padding: 10px 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav { display: flex; align-items: center; gap: 40px; }
+.brand { text-decoration: none; color: var(--text); }
+
+/* ZÁKLAD LOGA */
+.logo-text { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 1.3rem; letter-spacing: -0.02em; color: var(--text); }
+.logo-text span { font-weight: 400; transition: color var(--transition-med); }
+
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color var(--transition-fast); }
+.nav-links a:hover { color: var(--text); }
+
+/* MOBILNÉ MENU TLAČIDLO */
+.mobile-menu-toggle { display: none; background: transparent; border: none; color: var(--text); cursor: pointer; padding: 4px; z-index: 100; }
+
+/* HERO HUB */
+.hero { padding-top: 200px; padding-bottom: 80px; }
+.hero-glow { position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 70vw; height: 60vh; background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 60%); z-index: -1; pointer-events: none; }
+.hero-subtitle { max-width: 700px; font-size: 1.25rem; }
+
+/* EKOSYSTÉM KARTY (Portály) */
+.ecosystem-grid { display: grid; gap: 24px; margin-top: 60px; }
+.portal-card {
+    position: relative; display: flex; flex-direction: column; text-decoration: none;
+    background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);
+    padding: 40px 32px; overflow: hidden; transition: transform var(--transition-med), border-color var(--transition-med); min-height: 380px;
+}
+.portal-content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; }
+.portal-glow { position: absolute; inset: 0; opacity: 0; transition: opacity var(--transition-med); z-index: 1; pointer-events: none; }
+.portal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+.status-dot { width: 10px; height: 10px; border-radius: 50%; box-shadow: 0 0 10px currentColor; opacity: 0.8; }
+.portal-body { flex-grow: 1; }
+.portal-body p { font-size: 1rem; color: #a1a1aa; transition: color var(--transition-fast); }
+.portal-footer { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-subtle); transition: border-color var(--transition-med); }
+.btn-text { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); display: flex; align-items: center; gap: 8px; transition: color var(--transition-fast); }
+.arrow { transition: transform var(--transition-fast); }
+
+/* ŠPECIFICKÉ FARBY ZNAČIEK */
+.brand-web .logo-text span { color: var(--color-web); }
+.brand-web .status-dot { background-color: var(--color-web); color: var(--color-web); }
+.brand-web .portal-glow { background: radial-gradient(circle at 50% 120%, rgba(59, 130, 246, 0.15) 0%, transparent 70%); }
+.brand-web:hover { transform: translateY(-8px); border-color: rgba(59, 130, 246, 0.4); box-shadow: 0 20px 60px rgba(59, 130, 246, 0.1); }
+.brand-web:hover .portal-glow { opacity: 1; }
+.brand-web:hover .portal-body p { color: #e0f2fe; }
+.brand-web:hover .portal-footer { border-color: rgba(59, 130, 246, 0.2); }
+.brand-web:hover .btn-text { color: var(--color-web); }
+.brand-web:hover .arrow { transform: translateX(6px); }
+
+.brand-shop .logo-text span { color: var(--color-shop); }
+.brand-shop .status-dot { background-color: var(--color-shop); color: var(--color-shop); }
+.brand-shop .portal-glow { background: radial-gradient(circle at 50% 120%, rgba(249, 115, 22, 0.12) 0%, transparent 70%); }
+.brand-shop:hover { transform: translateY(-8px); border-color: rgba(249, 115, 22, 0.4); box-shadow: 0 20px 60px rgba(249, 115, 22, 0.1); }
+.brand-shop:hover .portal-glow { opacity: 1; }
+.brand-shop:hover .portal-body p { color: #ffedd5; }
+.brand-shop:hover .portal-footer { border-color: rgba(249, 115, 22, 0.2); }
+.brand-shop:hover .btn-text { color: var(--color-shop); }
+.brand-shop:hover .arrow { transform: translateX(6px); }
+
+.brand-is { cursor: default; }
+.brand-is .logo-text span { color: var(--text-muted); }
+.badge-soon { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; background: #222; color: #888; padding: 4px 10px; border-radius: var(--radius-pill); border: 1px solid #333; }
+.brand-is:hover { border-color: rgba(168, 85, 247, 0.3); }
+.brand-is:hover .logo-text span { color: var(--color-is); }
+.brand-is:hover .badge-soon { background: rgba(168, 85, 247, 0.1); color: var(--color-is); border-color: var(--color-is); }
+
+/* MANIFESTO & FOOTER */
+.manifesto-box { max-width: 800px; margin: 0 auto; padding: 60px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); text-align: center; }
+.manifesto-box h2 { font-size: 2.2rem; margin-bottom: 24px; }
+.manifesto-box p { font-size: 1.15rem; color: #d1d5db; margin-bottom: 20px; line-height: 1.8; }
+.signature { margin-top: 40px; font-family: "Space Grotesk", sans-serif; font-size: 1.2rem; color: var(--text); }
+.site-footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; font-size: 0.85rem; color: var(--text-muted); }
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+    .ecosystem-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 767px) {
+    .nav { width: 100%; justify-content: space-between; flex-wrap: wrap; }
+    .mobile-menu-toggle { display: block; }
+
+    .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; padding: 24px 0 16px; gap: 24px; }
+    .nav-links a { font-size: 1.2rem; }
+
+    /* Rozbaľovacia Pilulka */
+    .site-header.menu-active { border-radius: 24px; background: rgba(8, 8, 8, 0.98); }
+    .site-header.menu-active .nav-links { display: flex; animation: fade-in-up 0.4s ease; }
+
+    @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero { padding-top: 140px; }
+    .manifesto-box { padding: 32px 20px; }
+}
