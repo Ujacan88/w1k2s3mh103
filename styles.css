@@ -11,10 +11,10 @@
     --text: #ffffff;
     --text-muted: #888888;
 
-    /* Prémiová modrá pre Web */
+    /* Prémiové farby pre ekosystém */
     --color-web: #3b82f6;
     --color-shop: #f97316;
-    --color-is: #a855f7;
+    --color-marketing: #10b981;
 
     --radius-lg: 24px;
     --radius-md: 16px;
@@ -95,7 +95,9 @@ p { margin: 0 0 16px; color: var(--text-muted); font-size: 1.1rem; }
 .btn-text { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); display: flex; align-items: center; gap: 8px; transition: color var(--transition-fast); }
 .arrow { transition: transform var(--transition-fast); }
 
-/* ŠPECIFICKÉ FARBY ZNAČIEK */
+/* ŠPECIFICKÉ FARBY ZNAČIEK A EFEKTY */
+
+/* Sorty.web - Aktívna karta (Modrá) */
 .brand-web .logo-text span { color: var(--color-web); }
 .brand-web .status-dot { background-color: var(--color-web); color: var(--color-web); }
 .brand-web .portal-glow { background: radial-gradient(circle at 50% 120%, rgba(59, 130, 246, 0.15) 0%, transparent 70%); }
@@ -106,29 +108,270 @@ p { margin: 0 0 16px; color: var(--text-muted); font-size: 1.1rem; }
 .brand-web:hover .btn-text { color: var(--color-web); }
 .brand-web:hover .arrow { transform: translateX(6px); }
 
-.brand-shop .logo-text span { color: var(--color-shop); }
-.brand-shop .status-dot { background-color: var(--color-shop); color: var(--color-shop); }
+/* --- UZAMKNUTÉ KARTY (Vo vývoji) --- */
+.portal-card.locked {
+    cursor: default;
+    opacity: 0.4; /* Výrazne znížená priehľadnosť pre "zamknutý" efekt */
+    transition: all var(--transition-med);
+}
+
+.portal-card.locked:hover {
+    opacity: 0.8; /* Jemné prebudenie pri prejdení myšou */
+}
+
+/* Tenučká elegantná cross čiara cez názov */
+.portal-card.locked .logo-text {
+    position: relative;
+    display: inline-block;
+}
+
+.portal-card.locked .logo-text::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    top: 52%; /* Umiestnenie presne na stred textu */
+    height: 1px; /* Absolútne najtenšia možná čiara */
+    background-color: var(--text-muted);
+    opacity: 0.6;
+    transition: background-color var(--transition-med), opacity var(--transition-med);
+}
+
+.portal-card.locked .logo-text span { color: var(--text-muted); transition: color var(--transition-med); }
+.portal-card.locked .btn-text { color: var(--text-muted); transition: color var(--transition-med); }
+
+/* Vzhľad štítku "VO VÝVOJI" */
+.badge-soon {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    background: rgba(255, 255, 255, 0.05); color: var(--text-muted);
+    padding: 4px 10px; border-radius: var(--radius-pill); border: 1px solid var(--border-subtle);
+    transition: all var(--transition-med);
+}
+
+/* Hover efekty pre uzamknutý SHOP (Oranžová) */
 .brand-shop .portal-glow { background: radial-gradient(circle at 50% 120%, rgba(249, 115, 22, 0.12) 0%, transparent 70%); }
-.brand-shop:hover { transform: translateY(-8px); border-color: rgba(249, 115, 22, 0.4); box-shadow: 0 20px 60px rgba(249, 115, 22, 0.1); }
-.brand-shop:hover .portal-glow { opacity: 1; }
-.brand-shop:hover .portal-body p { color: #ffedd5; }
-.brand-shop:hover .portal-footer { border-color: rgba(249, 115, 22, 0.2); }
-.brand-shop:hover .btn-text { color: var(--color-shop); }
-.brand-shop:hover .arrow { transform: translateX(6px); }
+.portal-card.locked.brand-shop:hover { border-color: rgba(249, 115, 22, 0.3); transform: translateY(-4px); }
+.portal-card.locked.brand-shop:hover .portal-glow { opacity: 0.5; }
+.portal-card.locked.brand-shop:hover .logo-text span { color: var(--color-shop); }
+.portal-card.locked.brand-shop:hover .logo-text::after { background-color: var(--color-shop); opacity: 0.9; } /* Čiara sa sfarbí */
+.portal-card.locked.brand-shop:hover .badge-soon { background: rgba(249, 115, 22, 0.1); color: var(--color-shop); border-color: rgba(249, 115, 22, 0.3); }
 
-.brand-is { cursor: default; }
-.brand-is .logo-text span { color: var(--text-muted); }
-.badge-soon { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; background: #222; color: #888; padding: 4px 10px; border-radius: var(--radius-pill); border: 1px solid #333; }
-.brand-is:hover { border-color: rgba(168, 85, 247, 0.3); }
-.brand-is:hover .logo-text span { color: var(--color-is); }
-.brand-is:hover .badge-soon { background: rgba(168, 85, 247, 0.1); color: var(--color-is); border-color: var(--color-is); }
+/* Hover efekty pre uzamknutý MARKETING (Zelená) */
+.brand-marketing .portal-glow { background: radial-gradient(circle at 50% 120%, rgba(16, 185, 129, 0.12) 0%, transparent 70%); }
+.portal-card.locked.brand-marketing:hover { border-color: rgba(16, 185, 129, 0.3); transform: translateY(-4px); }
+.portal-card.locked.brand-marketing:hover .portal-glow { opacity: 0.5; }
+.portal-card.locked.brand-marketing:hover .logo-text span { color: var(--color-marketing); }
+.portal-card.locked.brand-marketing:hover .logo-text::after { background-color: var(--color-marketing); opacity: 0.9; } /* Čiara sa sfarbí */
+.portal-card.locked.brand-marketing:hover .badge-soon { background: rgba(16, 185, 129, 0.1); color: var(--color-marketing); border-color: rgba(16, 185, 129, 0.3); }
 
-/* MANIFESTO & FOOTER */
-.manifesto-box { max-width: 800px; margin: 0 auto; padding: 60px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); text-align: center; }
-.manifesto-box h2 { font-size: 2.2rem; margin-bottom: 24px; }
-.manifesto-box p { font-size: 1.15rem; color: #d1d5db; margin-bottom: 20px; line-height: 1.8; }
-.signature { margin-top: 40px; font-family: "Space Grotesk", sans-serif; font-size: 1.2rem; color: var(--text); }
+/* --- MANIFEST & MODERNY KONTAKT --- */
+
+.manifesto-intro {
+    max-width: 800px;
+    margin: 0 auto 80px;
+}
+
+.core-heading {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 32px;
+}
+
+.manifesto-body p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    line-height: 1.8;
+}
+.manifesto-body p:last-child { margin-bottom: 0; }
+
+/* Geometrická grafika (Štvorec, Lievik, Kocka) */
+.core-graphics {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 100px;
+    color: var(--text-muted);
+}
+
+.trinity-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.trin-node {
+    transition: transform var(--transition-med), filter var(--transition-med);
+    transform-origin: center;
+}
+
+/* Hover spôsobí, že sa geometrický tvar jemne zdvihne a rozsvieti svojou farbou */
+.trin-node:hover {
+    transform: translateY(-6px);
+    filter: drop-shadow(0 0 20px currentColor);
+}
+
+/* --- MODERNÁ ŠTRUKTÚRA KONTAKTU (Grid Dashboard) --- */
+.contact-structure {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Stredná časť s mailom je najširšia */
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.02);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.cs-block {
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--border-subtle);
+}
+.cs-block:last-child { border-right: none; }
+
+/* Zvýraznenie hlavného bloku s e-mailom */
+.cs-main {
+    background: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    text-align: center;
+}
+
+.cs-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.cs-value {
+    font-size: 0.95rem;
+    color: var(--text);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot-green {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--color-marketing);
+    box-shadow: 0 0 10px var(--color-marketing);
+}
+
+.cs-email {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: color var(--transition-fast), text-shadow var(--transition-fast);
+}
+
+.cs-email:hover {
+    color: var(--color-web);
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.cs-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.cs-socials a {
+    font-size: 0.95rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.cs-socials a:hover { color: var(--color-web); }
+.cs-socials .sep { color: var(--text-muted); opacity: 0.5; }
+
+.blink-slow { animation: blinkSlow 2s infinite; }
+@keyframes blinkSlow { 50% { opacity: 0.6; } }
+
+/* Responzivita pre mobil */
+@media (max-width: 899px) {
+    .contact-structure { grid-template-columns: 1fr; }
+    .cs-block {
+        border-right: none;
+        border-bottom: 1px solid var(--border-subtle);
+        align-items: center;
+        text-align: center;
+    }
+    .cs-block:last-child { border-bottom: none; }
+}
+
+
+/*footer*/
 .site-footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; font-size: 0.85rem; color: var(--text-muted); }
+
+/* --- EXTRÉMNE JEDNODUCHÁ GRAFIKA (Čisté CSS) --- */
+
+.wip-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin-top: -20px; /* Vycentrovanie do stredu karty */
+}
+
+.wip-box p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* MARKETING: Minimalistický graf (4 tenučké čiary) */
+.wip-mini-graph {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 35px;
+    margin-bottom: 24px;
+    opacity: 0.5;
+}
+
+.wip-mini-graph span {
+    width: 1px; /* Absolútne najtenšia možná čiara */
+    background-color: var(--text-muted);
+    transition: all var(--transition-med);
+}
+
+.wip-mini-graph span:nth-child(1) { height: 12px; }
+.wip-mini-graph span:nth-child(2) { height: 24px; }
+.wip-mini-graph span:nth-child(3) { height: 16px; }
+.wip-mini-graph span:nth-child(4) { height: 35px; }
+
+/* MARKETING Hover - Graf sa zafarbí na zeleno a posledná čiara narastie */
+.portal-card.locked.brand-marketing:hover .wip-mini-graph span {
+    background-color: var(--color-marketing);
+}
+.portal-card.locked.brand-marketing:hover .wip-mini-graph span:nth-child(4) {
+    transform: scaleY(1.3);
+    transform-origin: bottom;
+}
+
+
+/* SHOP: Minimalistická kocka (1px okraj) */
+.wip-mini-cube {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--text-muted);
+    margin-bottom: 24px;
+    opacity: 0.5;
+    transition: all var(--transition-med);
+}
+
+/* SHOP Hover - Kocka sa zafarbí na oranžovo a elegantne sa otočí */
+.portal-card.locked.brand-shop:hover .wip-mini-cube {
+    border-color: var(--color-shop);
+    transform: rotate(45deg);
+}
 
 /* RESPONSIVE */
 @media (min-width: 768px) {
@@ -138,16 +381,16 @@ p { margin: 0 0 16px; color: var(--text-muted); font-size: 1.1rem; }
     .nav {
         width: 100%;
         justify-content: space-between;
-        align-items: center; /* Drží logo a ikonu v strede */
+        align-items: center;
         flex-wrap: wrap;
-        gap: 0; /* TOTO OPRAVUJE TÚ ZBYTOČNÚ VÝŠKU */
+        gap: 0;
     }
     .mobile-menu-toggle { display: block; padding: 2px; }
     .mobile-menu-toggle svg { width: 20px; height: 20px; }
 
     .nav-links {
         display: flex; flex-basis: 100%; flex-direction: column; align-items: center;
-        gap: 0; /* Zabraňuje nafukovaniu keď je zavreté */
+        gap: 0;
         max-height: 0; padding: 0; margin: 0; opacity: 0; visibility: hidden; overflow: hidden;
         transform: translateY(-10px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -160,4 +403,66 @@ p { margin: 0 0 16px; color: var(--text-muted); font-size: 1.1rem; }
 
     .hero { padding-top: 140px; }
     .manifesto-box { padding: 32px 20px; }
+}
+
+/* --- AKTUALIZOVANÝ KONTAKTNÝ DASHBOARD --- */
+.contact-structure {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr 1.2fr 1.2fr; /* Rozdelenie na 4 sekcie */
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.02);
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+.cs-value-link {
+    font-size: 1.1rem;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-fast);
+    margin-bottom: 4px;
+}
+.cs-value-link:hover { color: var(--color-web); }
+
+.cs-socials-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cs-social-item {
+    font-size: 0.95rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: opacity var(--transition-fast), color var(--transition-fast);
+}
+.cs-social-item:hover { color: var(--color-web); }
+.yt-link:hover { color: #ff0000; } /* Jemný YouTube akcent pri hoveri */
+
+.cs-status {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+/* Úprava pre stredné obrazovky */
+@media (max-width: 1100px) {
+    .contact-structure {
+        grid-template-columns: 1fr 1fr;
+    }
+    .cs-block {
+        border-bottom: 1px solid var(--border-subtle);
+    }
+    .cs-block:nth-child(even) { border-right: none; }
+}
+
+/* Úprava pre mobil */
+@media (max-width: 600px) {
+    .contact-structure { grid-template-columns: 1fr; }
+    .cs-block { border-right: none; }
 }
